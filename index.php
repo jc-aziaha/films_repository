@@ -1,6 +1,19 @@
 <?php
 session_start();
 
+    // Définition du titre de cette page
+    $title = "Liste des films"; 
+    
+    // Définition de la description de la page
+    $description = "Voici la liste des films dont ceux que nous avons déjà vu et ceux que nous prévoyons de voir.";
+
+    // Mots clés
+    $keywords="Cinéma, liste, films";
+
+    $font_awesome = <<<HTML
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+HTML;
+
     // Etablir une connexion avec la base de données
     require __DIR__ . "/db/connexion.php";
 
@@ -34,7 +47,7 @@ session_start();
         <?php if(count($films) > 0) : ?>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 mx-auto">
+                    <div class="col-md-5 mx-auto">
 
                         <?php if(isset($_SESSION['success']) && !empty($_SESSION['success'])) : ?>
                             <div class="text-center alert alert-success alert-dismissible fade show" role="alert">
@@ -63,7 +76,7 @@ session_start();
                             </div>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="modal<?php echo htmlspecialchars($film['id']); ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="modal<?php echo htmlspecialchars($film['id']); ?>" tabindex="-1" aria-labelledby="modal<?php echo htmlspecialchars($film['id']); ?>" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

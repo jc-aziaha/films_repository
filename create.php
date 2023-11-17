@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
     // Mon serveur
 
     // Si les données arrivent au serveur via la méthode POST
@@ -152,9 +151,17 @@ session_start();
     }
 
     // Générons le jéton de sécurité.
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(30));
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(30));  
+?>
+<?php
+    // Définition du titre de cette page
+    $title = "Nouveau film"; 
 
-    
+    // Définition de la description de la page
+    $description = "Ajout d'un nouveau film à la liste";
+
+    // Mots clés
+    $keywords="Ajout, Insertion, film";
 ?>
 <?php include __DIR__ . "/partials/head.php"; ?>
 

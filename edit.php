@@ -199,6 +199,16 @@ session_start();
 
     
 ?>
+<?php
+    // Définition du titre de cette page
+    $title = "Modification de ce film"; 
+
+    // Définition de la description de la page
+    $description = "Modification des informations de ce film et mise à jour dans la base de données.";
+
+    // Mots clés
+    $keywords="Modification, Mise à jour";
+?>
 <?php include __DIR__ . "/partials/head.php"; ?>
 
     <?php include __DIR__ . "/partials/nav.php"; ?>
